@@ -1,5 +1,10 @@
 # Capistrano::Nodenv::Install Changelog
 
+### 1.0.0-beta.3
+
+- Fixed homepage
+- Make version consistent with gemspec
+
 ### 1.0.0-beta.2
 
 - Updated [Capistrano::nodenv](https://github.com/platanus/capistrano-nodenv) version
