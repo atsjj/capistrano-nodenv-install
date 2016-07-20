@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capistrano-nodenv-install (1.0.0.pre.beta.1)
+    capistrano-nodenv-install (1.0.0.pre.beta.2)
       capistrano (~> 3.1)
       capistrano-nodenv (~> 1.1)
 
