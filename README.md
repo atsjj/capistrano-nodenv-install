@@ -1,18 +1,16 @@
-# Capistrano::Rbenv::Install
+# Capistrano::Nodenv::Install
 
-Capistrano plugin for **lightweight** rubies management with rbenv.
+Capistrano plugin for **lightweight** nodes management with nodenv.
 
-Works with Capistrano 3 (only). For Capistrano 2 support check
-[this repository](https://github.com/yyuu/capistrano-rbenv)
-(version 1.x of `capistrano-rbenv` gem).
+Works with Capistrano 3 (only).
 
 ### Installation
 
 Install by adding the following to the `Gemfile`:
 
     gem 'capistrano', '~> 3.2.1'
-    gem 'capistrano-rbenv', '~> 2.0' # required
-    gem 'capistrano-rbenv-install', '~> 1.2.0'
+    gem 'capistrano-nodenv', '~> 1.0' # required
+    gem 'capistrano-nodenv-install', '~> 1.0'
 
 then:
 
@@ -22,15 +20,15 @@ then:
 
 The following goes to `Capfile`:
 
-    require 'capistrano/rbenv_install'
+    require 'capistrano/nodenv_install'
 
 This plugin heavily relies on
-[capistrano-rbenv config options](https://github.com/capistrano/rbenv#usage).
-So make sure to properly setup `capistrano-rbenv` and you'll be good.
+[capistrano-nodenv config options](https://github.com/atsjj/capistrano-nodenv#usage).
+So make sure to properly setup `capistrano-nodenv` and you'll be good.
 
 For example, in `config/deploy.rb`:
 
-    set :rbenv_ruby, '2.0.0-p247'
+    set :nodenv_node, '6.3.0'
 
 Other than that, this plugin does not need any setup.
 
@@ -38,58 +36,56 @@ Run:
 
     $ bundle exec cap production deploy
 
-And watch ruby being installed.
+And watch node being installed.
 
 ### Purpose
 
 Installing software packages on servers is called
 [provisioning](http://en.wikipedia.org/wiki/Provisioning#Server_provisioning).
-Installing and managing rubies falls into that domain, and is best done with a
+Installing and managing nodes falls into that domain, and is best done with a
 proper tool like chef, puppet, ansible or something else.
 
 Why this plugin then?
 
-- Capistrano is a great tool (written in ruby btw) so, when there's a need,
-installing rubies with it should be easy too
+- Capistrano is a great tool that makes deployments easy so, when there's a
+need, installing nodes with it should be easy too
 - not everyone knows (or has time to learn) how to use provisioning tools
 mentioned above
-- sometimes installing ruby manually is just easier than fiddling with your
+- sometimes installing node manually is just easier than fiddling with your
 chef cookbooks. Instead of manually, you can do it with this plugin now
 
-Imagine you want to quickly deploy a ruby `1.9.2` app to a server that already
-has one or more ruby `2.0.0` apps.
+Imagine you want to quickly deploy a node `5.0.0` app to a server that already
+has one or more node `6.0.0` apps.
 "Oh, let's just quickly update our cookbooks" - yea right! I'd rather manually
-`ssh` to the server directly and run `rbenv install 1.9.2-p320`. But I don't
+`ssh` to the server directly and run `nodenv install 5.0.0`. But I don't
 want to manually `ssh` to the server too. In that case I just can install
-`capistrano-rbenv-install` and forget about it altogether.
+`capistrano-nodenv-install` and forget about it altogether.
 
 ### What it does
 
 It only does the bare minimum that's required for Capistrano to work. That's
-why it's a plugin for *lightweight* ruby management.
+why it's a plugin for *lightweight* node management.
 
 It makes sure that:
 
-- `rbenv` and `ruby build` are installed (installs them using `git`)
-- ruby specified with `:rbenv_ruby` option is installed
-- `bundler` gem is installed
+- `nodenv` and `node build` are installed (installs them using `git`)
+- node specified with `:nodenv_node` option is installed
 
 ### What it does NOT do
 
 It **does not**:
 
-- manage ruby gems<br/>
-`bundler` is installed by default and that's pretty much it.
+- manage npm packages
 
-- does not install ruby dependency packages<br/>
+- does not install node dependency packages<br/>
 (git-core build-essential libreadline6-dev etc ...). You should probably
 install/provision those some other way.
 
-- does not manage `rbenv` plugins<br/>
-It only installs `ruby build` for the purpose of installing ruby.
+- does not manage `nodenv` plugins<br/>
+It only installs `node build` for the purpose of installing node.
 
-- does not setup rbenv for direct use on the server via the command line<br/>
-Example: `ssh`ing to the server and manually running ruby commands is not
+- does not setup nodenv for direct use on the server via the command line<br/>
+Example: `ssh`ing to the server and manually running node commands is not
 supported.
 
 ### More Capistrano automation?
@@ -98,10 +94,9 @@ Check out [capistrano-plugins](https://github.com/capistrano-plugins) github org
 
 ### Thanks
 
-@yyuu and the original
-[capistrano-rbenv](https://github.com/yyuu/capistrano-rbenv) project for
-inspiration
+The authors of [Capistrano::Rbenv::Install](https://github.com/capistrano-plugins/capistrano-rbenv-install)
+This would not have been possible without your original work!
 
 ### License
 
-[MIT](LICENSE.md)
+[MIT](LICENSE.txt)

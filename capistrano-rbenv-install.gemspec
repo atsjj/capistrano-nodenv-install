@@ -1,29 +1,23 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'capistrano/rbenv_install/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "capistrano-rbenv-install"
-  gem.version       = Capistrano::RbenvInstall::VERSION
-  gem.authors       = ["Bruno Sutic"]
-  gem.email         = ["bruno.sutic@gmail.com"]
-  gem.description   = <<-EOF.gsub(/^\s+/, '')
-    Capistrano plugin for lightweight rubies management with rbenv.
-
-    Works with Capistrano 3 (only!). For Capistrano 2 support see:
-    https://github.com/yyuu/capistrano-rbenv
-  EOF
-  gem.summary       = "Capistrano plugin for lightweight rubies managment with rbenv."
-  gem.homepage      = "https://github.com/capistrano-plugins/capistrano-rbenv-install"
-
-  gem.license       = "MIT"
+  gem.name          = 'capistrano-nodenv-install'
+  gem.version       = '0.0.0'
+  gem.authors       = ['Steve Jabour']
+  gem.email         = ['steve@jabour.me']
+  gem.description   = %q{Capistrano plugin for lightweight nodes management with nodenv}
+  gem.summary       = %q{Capistrano plugin for lightweight nodes management with nodenv}
+  gem.homepage      = 'https://github.com/capistrano-plugins/capistrano-nodenv-install'
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
-  gem.require_paths = ["lib"]
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = ['lib']
 
-  gem.add_dependency 'capistrano', '>= 3.0'
-  gem.add_dependency 'capistrano-rbenv', '>= 2.0'
+  gem.add_dependency 'capistrano', '~> 3.1'
+  gem.add_dependency 'capistrano-nodenv', '~> 1.0'
 
-  gem.add_development_dependency "rake"
+  gem.add_development_dependency 'rake'
 end
