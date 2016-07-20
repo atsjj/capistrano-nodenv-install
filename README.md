@@ -9,7 +9,7 @@ Works with Capistrano 3 (only).
 Install by adding the following to the `Gemfile`:
 
     gem 'capistrano', '~> 3.2.1'
-    gem 'capistrano-nodenv', '~> 1.0' # required
+    gem 'capistrano-nodenv', '~> 1.1' # required
     gem 'capistrano-nodenv-install', '~> 1.0'
 
 then:
@@ -23,7 +23,7 @@ The following goes to `Capfile`:
     require 'capistrano/nodenv_install'
 
 This plugin heavily relies on
-[capistrano-nodenv config options](https://github.com/atsjj/capistrano-nodenv#usage).
+[capistrano-nodenv config options](https://github.com/platanus/capistrano-nodenv#usage).
 So make sure to properly setup `capistrano-nodenv` and you'll be good.
 
 For example, in `config/deploy.rb`:
