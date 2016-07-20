@@ -1,5 +1,9 @@
 # Capistrano::Nodenv::Install Changelog
 
+### 1.0.0
+
+- Release v1.0.0
+
 ### 1.0.0-beta.3
 
 - Fixed homepage
