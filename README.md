@@ -1,4 +1,4 @@
-# Capistrano::Nodenv::Install
+# Capistrano::Nodenv::Install [![Gem Version](https://badge.fury.io/rb/capistrano-nodenv-install.svg)](https://badge.fury.io/rb/capistrano-nodenv-install)
 
 Capistrano plugin for **lightweight** nodes management with nodenv.
 
