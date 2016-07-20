@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['steve@jabour.me']
   gem.description   = %q{Capistrano plugin for lightweight nodes management with nodenv}
   gem.summary       = %q{Capistrano plugin for lightweight nodes management with nodenv}
-  gem.homepage      = 'https://github.com/capistrano-plugins/capistrano-nodenv-install'
+  gem.homepage      = 'https://github.com/atsjj/capistrano-nodenv-install'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
